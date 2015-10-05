@@ -12,11 +12,11 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.Core;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace RestaurantManager.UniversalWindows
+namespace XAMLEventHandling
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -26,25 +26,35 @@ namespace RestaurantManager.UniversalWindows
         public MainPage()
         {
             this.InitializeComponent();
+
+            Toggle.Toggled += Toggle_Toggled;
         }
 
-        private void buttonOrderPage_Click(object sender, RoutedEventArgs e)
+        private void Toggle_Toggled(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OrderPage));
+            ShowMessage();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        async void ShowMessage(string message = "You clicked me!")
         {
-            Frame.Navigate(typeof(ExpeditePage));
+            var dialog = new MessageDialog(message);
+            await dialog.ShowAsync();
         }
 
-        private void OnNavigatedTo(object sender, NavigationEventArgs e)
+        void Button_Click(object sender, RoutedEventArgs e)
         {
-            // Each time a navigation event occurs, update the Back button's visibility
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-                ((Frame)sender).CanGoBack ?
-                AppViewBackButtonVisibility.Visible :
-                AppViewBackButtonVisibility.Collapsed;
+            ShowMessage();
+        }
+
+        private void ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool? isChecked = (sender as ToggleButton).IsChecked;
+            ShowMessage($"Your IsChecked Property Value: [{isChecked}]");
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = (sender as ComboBox).SelectedItem;
         }
     }
 }

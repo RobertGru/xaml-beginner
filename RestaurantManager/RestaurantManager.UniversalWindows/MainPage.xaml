@@ -24,14 +24,10 @@
                  " />
 
         </TextBlock>
-        <TextBlock x:Name="textBlockOrders" HorizontalAlignment="Left" Margin="102,180.833,0,0" Grid.Row="2" TextWrapping="Wrap"
-                  VerticalAlignment="Top" Height="79" Width="533">
-            <Run Text="**Go To Orders**" FontSize="64" />
-        </TextBlock>
-        <TextBlock x:Name="textBlockSubmit" HorizontalAlignment="Left" Margin="102,180.833,0,0" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap"
-        	VerticalAlignment="Top" Height="79" Width="533">
-        	<Run Text="**Submit Order**" FontSize="64" />
-        </TextBlock>
+        <Button x:Name="buttonOrderPage" Content="Go To Orders Page" HorizontalAlignment="Left" Margin="142,155.833,0,0" 
+                Grid.Row="2" VerticalAlignment="Top" Height="104" Width="428" FontSize="48" Click="buttonOrderPage_Click"/>
+        <Button x:Name="button" Content="Submit Order" Grid.Column="1" HorizontalAlignment="Left" Margin="149,155.833,0,0"
+                Grid.Row="2" VerticalAlignment="Top" Height="104" Width="428" FontSize="48" Click="button_Click"/>
 
     </Grid>
 </Page>

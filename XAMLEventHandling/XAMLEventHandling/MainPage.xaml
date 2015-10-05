@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="XAMLEventHandling.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XAMLEventHandling"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical">
+            <Button Content="Sample Button" Click="Button_Click" />
+            <ToggleButton Content="Sample ToggleButton" Checked="ToggleButton_Click" />
+            <CheckBox Content="Sample CheckBox" Checked="ToggleButton_Click" />
+            <ToggleSwitch x:Name="Toggle" OnContent="Sample On" OffContent="Sample Off" />
+            <ComboBox SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem Content="Sample 1" />
+                <ComboBoxItem Content="Sample 2" />
+            </ComboBox>
+            <ListBox SelectedValuePath="Tag" SelectedValue="X12">
+                <ListBoxItem Content="Adams" Tag="X12" />
+                <ListBoxItem Content="Boston" Tag="Y45" />
+                <ListBoxItem Content="Chicago" Tag="Z81" />
+            </ListBox>
+        </StackPanel>
+
+       
+    </Grid>
+</Page>

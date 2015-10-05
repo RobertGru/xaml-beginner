@@ -8,14 +8,15 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
         <Grid.RowDefinitions>
 
             <RowDefinition Height="209*" />
             <RowDefinition Height="31*" />
         </Grid.RowDefinitions>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="475,34,0,0" Grid.Row="1" 
-                   TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="76" Width="478">
-            <Run Text="**Clear Orders**" FontSize="50" />
-        </TextBlock>
+        <Button x:Name="button" Content="Clear Orders" HorizontalAlignment="Left" Margin="555,24,0,0" Grid.Row="1" VerticalAlignment="Top" Width="352" FontSize="48"/>
+        <Grid HorizontalAlignment="Left" Height="710" Margin="31,76,0,0" VerticalAlignment="Top" Width="1380" Background="#FF1D0D76"/>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Home" Label="HOME" Margin="60,0,0,0" VerticalAlignment="Top" Click="appBarButton_Click"/>
     </Grid>
 </Page>
